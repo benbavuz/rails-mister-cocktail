@@ -1,0 +1,21 @@
+<div class="container">
+  <h2 style="padding-top: 20px">All Cocktails</h2>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.atabula.com/wp-content/uploads/2016/01/Tendance-cocktail.jpg');">
+        <div class="card-category">Cocktail</div>
+        <div class="card-description">
+         <h2><%= cocktail.name %></h2>
+        </div>
+
+        <a class="card-link" href="/cocktails/<%=cocktail.id%>" ></a>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>

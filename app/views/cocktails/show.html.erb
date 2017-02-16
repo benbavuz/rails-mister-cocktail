@@ -1,0 +1,33 @@
+<div class ="container">
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.atabula.com/wp-content/uploads/2016/01/Tendance-cocktail.jpg');">
+    <div class="card-category">Cocktail</div>
+    <div class="card-description">
+      <h2><%= @cocktail.name %></h2>
+    </div>
+</div>
+
+
+<div class="container">
+  <div class="row justify-content-around">
+
+    <div class="col-xs-12 col-md-6">
+      <div class="ingredients">
+      <h3 class="text-center" style="color:$brand-color"><strong>Ingredients</strong></h2>
+        <% @ingredients.each do |ingredient| %>
+        <div class = "ingredient-list">- <%= ingredient.name %></div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <div class="doses">
+      <h3 class="text-center"><strong>Doses</strong></h2>
+      <% @doses.each do |dose| %>
+        <div class = "dose-list"><%= dose.description %> <%= link_to " x", dose_path(dose), method: :delete %></div>
+        <% end %>
+      </div>
+      <div class= "text-right"><%= link_to "New dose", new_cocktail_dose_path(@cocktail), {class: "btn btn-medium"} %></div>
+    </div>
+
+    </div>
+</div>
